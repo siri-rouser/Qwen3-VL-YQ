@@ -1,6 +1,21 @@
 import re
 
 # Define placeholders for dataset paths
+CARMEL_VAD_CAT = {
+    "annotation_path": "/workspace/QWEN3-VL/datasets/CARMEL_VAD/carmel_vad_cat_training_with_system_5cat_mini.json",
+    "data_path": f"",
+}
+
+CARMEL_VAD_DES = {
+    "annotation_path": "/workspace/QWEN3-VL/datasets/CARMEL_VAD/carmel_vad_des_training_context_nobox.json",
+    "data_path": f"",
+}
+
+AV_TAU = {
+    "annotation_path": "/workspace/QWEN3-VL/datasets/AV-TAU/av_tau.json",
+    "data_path": f"", 
+}
+
 CAMBRIAN_737K = {
     "annotation_path": "PATH_TO_CAMBRIAN_737K_ANNOTATION",
     "data_path": "",
@@ -32,6 +47,9 @@ data_dict = {
     "mp_doc": MP_DOC,
     "clevr_mc": CLEVR_MC,
     "videochatgpt": VIDEOCHATGPT,
+    "av_tau": AV_TAU,
+    "carmel_vad_cat": CARMEL_VAD_CAT,
+    "carmel_vad_des": CARMEL_VAD_DES,
 }
 
 

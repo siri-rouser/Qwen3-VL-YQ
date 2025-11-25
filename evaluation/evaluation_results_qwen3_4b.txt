@@ -1,0 +1,45 @@
+
+========================================
+Category: category
+========================================
+For quantitative evaluation:
+{
+    "Accuracy": 0.4444444444444444
+}
+
+
+========================================
+Category: category
+========================================
+For quantitative evaluation:
+{
+    "Accuracy": 0.4444444444444444
+}
+
+
+========================================
+Category: category
+========================================
+For quantitative evaluation:
+{
+    "Accuracy": 0.0
+}
+
+
+========================================
+Category: category
+========================================
+For quantitative evaluation:
+{
+    "Accuracy": 0.0
+}
+
+
+========================================
+Category: category
+========================================
+For quantitative evaluation:
+{
+    "Accuracy": 1.0
+}
+

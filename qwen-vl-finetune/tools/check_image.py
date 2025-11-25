@@ -164,6 +164,6 @@ def validate_data(json_file_path, media_folder_path):
 
 # Example usage
 if __name__ == "__main__":
-    json_file_path = "example.json"  # Replace with your JSON file path
-    media_folder_path = "media"      # Replace with your media folder path
+    json_file_path = "/workspace/QWEN3-VL/datasets/AV-TAU/av_tau.json"  # Replace with your JSON file path
+    media_folder_path = "/workspace/QWEN3-VL/datasets/AV-TAU/media"      # Replace with your media folder path
     validate_data(json_file_path, media_folder_path)

@@ -10,5 +10,6 @@ RUN ln -sf /usr/bin/python3 /usr/bin/python &&  pip install --no-cache-dir \
     transformers-stream-generator==0.0.5 \
     accelerate
 
-# Copy web demo script
-COPY web_demo_mm.py ./
+WORKDIR /workspace
+
+CMD ["/bin/bash"]

@@ -1,0 +1,7 @@
+# Do not commit secrets
+note.txt
+
+# Do not commit large datasets
+datasets/
+
+qwen-vl-finetune/wandb

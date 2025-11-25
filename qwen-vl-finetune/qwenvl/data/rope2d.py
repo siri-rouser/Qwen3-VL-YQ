@@ -3,7 +3,7 @@ from typing import Dict, Optional, Sequence, List, Tuple
 
 
 def get_rope_index_3(
-    spatial_merge_size: Optional[int] = 2,
+    spatial_merge_size: Optional[int] = 1,
     input_ids: Optional[torch.LongTensor] = None,
     image_grid_thw: Optional[torch.LongTensor] = None,
     video_grid_thw: Optional[torch.LongTensor] = None,

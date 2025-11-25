@@ -18,11 +18,11 @@ class DataArguments:
     base_interval: int = field(default=2)
     max_pixels: int = field(default=28 * 28 * 576)
     min_pixels: int = field(default=28 * 28 * 16)
-    video_max_frames: Optional[int] = field(default=8)
+    video_max_frames: Optional[int] = field(default=96)
     video_min_frames: Optional[int] = field(default=4)
-    video_max_pixels: int = field(default=1024 * 28 * 28)
+    video_max_pixels: int = field(default=2048 * 28 * 28)
     video_min_pixels: int = field(default=256 * 28 * 28)
-    video_fps: float = 2
+    video_fps: float = 10
 
 
 @dataclass
@@ -37,3 +37,9 @@ class TrainingArguments(transformers.TrainingArguments):
     )
     mm_projector_lr: Optional[float] = None
     vision_tower_lr: Optional[float] = None
+
+    ## Lora config
+    lora_enable: bool = field(default=False)
+    lora_r: int = field(default=64)
+    lora_alpha: int = field(default=128)
+    lora_dropout: float = field(default=0.0)

@@ -24,7 +24,7 @@ VIDEO_TOKEN_INDEX = 151656
 DEFAULT_IMAGE_TOKEN = "<image>"
 DEFAULT_VIDEO_TOKEN = "<video>"
 
-local_rank = None
+local_rank = 0
 
 
 def rank0_print(*args):
@@ -137,7 +137,7 @@ def update_processor_pixels(processor, data_args):
     return processor
 
 
-def _build_messages(item: Dict[str, Any], base_path: Path) -> List[Dict[str, Any]]:
+def _build_messages(item: Dict[str, Any], base_path: Path, system_prompt: str = None) -> List[Dict[str, Any]]:
     # Extract and normalize images and videos
     images = item.get("image") or []
     if isinstance(images, str):
@@ -154,8 +154,15 @@ def _build_messages(item: Dict[str, Any], base_path: Path) -> List[Dict[str, Any
     video_pool = [
         {"type": "video", "video": _make_abs_paths(base_path, vid)} for vid in videos
     ]
+    
 
     messages = []
+    if system_prompt:
+        messages.append({
+            "role": "system", 
+            "content": [{"type": "text", "text": system_prompt}]
+        })
+    
     for turn in item["conversations"]:
         role = "user" if turn["from"] == "human" else "assistant"
         text: str = turn["value"]
@@ -208,7 +215,8 @@ def preprocess_qwen_visual(
 
     source = sources[0]
     base_path = Path(source.get("data_path", ""))
-    messages = _build_messages(source, base_path)
+    system_prompt = source.get("system_prompt", None)
+    messages = _build_messages(source, base_path, system_prompt=system_prompt)
 
     full_result = processor.apply_chat_template(
         messages, tokenize=True, return_dict=True, return_tensors="pt"
@@ -410,6 +418,7 @@ class LazySupervisedDataset(Dataset):
                 self.processor.video_processor.temporal_patch_size
                 / self.processor.video_processor.fps
             ] * len(video_grid_thw)
+
         else:
             video_grid_thw = None
             second_per_grid_ts = None

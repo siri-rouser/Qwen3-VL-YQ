@@ -1,0 +1,615 @@
+Sample 1:
+Ground Truth: At a double-lane urban roundabout, a red Pickup enters from the mid-top of the frame, directly turn left(clockwise, and exit via the exit lane on the right.
+Prediction: Yes, there is anomalous driving behavior in the video. A red car enters the roundabout from the right side, but instead of following the standard roundabout rules (driving counterclockwise and yielding to traffic already in the roundabout), it appears to be cutting across the roundabout in a manner that could be considered dangerous or improper. This behavior could potentially lead to a collision or traffic disruption, as it does not conform to typical roundabout etiquette.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 2,
+    "reasoning_score": 2,
+    "total_score": 5
+}
+
+Sample 2:
+Ground Truth: At a double-lane roundabout, a white SUV enters from the bottom-left at very high speed, jumps the curb, cuts into the opposite lane, travels against the flow and nearly strikes a circulating car, then exits via the left-hand exit.
+Prediction: Yes, there is anomalous driving behavior in the video. A white sedan enters the roundabout from the left side, but instead of following the proper roundabout etiquette (yielding to traffic already in the roundabout and maintaining a steady, slow speed), it accelerates aggressively and cuts across the roundabout, almost colliding with a black SUV that is already navigating the roundabout. This behavior is dangerous and violates standard traffic rules for roundabouts.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 4,
+    "reasoning_score": 3,
+    "total_score": 9
+}
+
+Sample 3:
+Ground Truth: At a wet, double-lane roundabout at night, a dark car appears at the top-right, traveling down the exit lane toward the roundabout (wrong-way).
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At approximately 0:03, a red car enters the roundabout from the bottom left and begins to drive in a counterclockwise direction. However, instead of following the standard roundabout protocol — which typically requires vehicles to yield to those already in the roundabout and to maintain a clockwise direction — the red car appears to be driving in the wrong direction around the roundabout. This is highly unusual and potentially dangerous, as it could lead to collisions with other vehicles that are following the correct traffic flow.
+
+Additionally, at 0:05, another vehicle (a dark-colored SUV) enters the roundabout from the top right and also appears to be driving counterclockwise, further reinforcing the anomaly. This behavior violates standard traffic rules for roundabouts and poses a significant safety risk.
+
+The anomalous behavior is evident because roundabouts are designed for clockwise circulation, and vehicles entering from any direction must yield to those already in the roundabout and follow the correct direction of travel. The vehicles in the video are not adhering to these rules, making their actions anomalous.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 4:
+Ground Truth: At a sunny double-lane roundabout in a commercial area, a dark sedan travels from the upper-right exit lane toward the roundabout against the marked direction, then stops in front of the yielding lane.
+Prediction: Yes, there is anomalous driving behavior in the video. A black SUV enters the roundabout from the bottom left, but instead of following the standard counterclockwise flow, it makes a sharp, abrupt turn to the right, cutting across the roundabout’s central island. This maneuver is dangerous and violates typical roundabout rules, as it forces other vehicles to brake or swerve to avoid collision. The SUV’s trajectory appears erratic and uncoordinated, suggesting possible driver error or distraction. This behavior poses a significant risk to other road users and is not consistent with safe or legal driving practices in a roundabout.
+Evaluation Results: {
+    "environment_score": 0,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 2
+}
+
+Sample 5:
+Ground Truth: At a sunny multilane roundabout in a shopping area, a vehicle on the upper-right drives toward the roundabout through the outbound exit lane, passing the yield markings contraflow while other cars circulate normally.
+Prediction: Yes, there is anomalous driving behavior in the video. At 0:03, a black car enters the roundabout from the bottom left and proceeds to drive through the roundabout in the wrong direction, going counterclockwise instead of the expected clockwise direction. This is against standard traffic rules for roundabouts and poses a safety hazard as it may collide with other vehicles that are following the correct direction.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 4
+}
+
+Sample 6:
+Ground Truth: At a snowy double-lane roundabout at night, a car enters from the top of frame through exit lane and drives clockwise inside the roundabout.
+Prediction: Yes, there is anomalous driving behavior in the video. A vehicle is seen driving in the wrong direction on the road, going against the flow of traffic. This is dangerous and illegal, as it can lead to collisions and other accidents. The vehicle appears to be a white car, and it is moving towards the camera while other cars are moving away from the camera. This behavior is not typical and should be reported to the authorities.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 3,
+    "reasoning_score": 3,
+    "total_score": 8
+}
+
+Sample 7:
+Ground Truth: At a double-lane urban roundabout, a white SUV start from the middle of the frame inside the roundabout, then exits through the entry lane of the roundabout on the right.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At approximately 0:03, a silver sedan enters the roundabout from the bottom-left and proceeds to drive counter-clockwise around the roundabout. However, instead of exiting the roundabout at the appropriate exit, the vehicle continues to drive around the roundabout multiple times, appearing to circle the central island without exiting. This behavior is unusual because vehicles typically enter a roundabout and exit at the appropriate lane for their intended direction, rather than circling multiple times without exiting. This could indicate confusion, a navigational error, or potentially a deliberate attempt to delay or obstruct traffic.
+
+Additionally, the silver sedan’s repeated circling may cause disruption to other vehicles attempting to navigate the roundabout, which is not standard or expected behavior in traffic flow.
+
+This behavior is considered anomalous as it deviates from standard roundabout etiquette and may pose a safety risk to other drivers.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 1
+}
+
+Sample 8:
+Ground Truth: At night at a double-lane roundabout, a black SUV enters via an exit lane from the bottom-left, driving counterclockwise against the intended flow within the circulatory roadway, then leaves correctly through exit lane on the right.
+Prediction: Yes, there is anomalous driving behavior in the video. A black SUV enters the roundabout from the left, but instead of following the proper circular path, it makes a sharp turn to the right, cutting across the roundabout and narrowly avoiding a collision with another vehicle. This behavior is dangerous and violates standard roundabout rules, which require vehicles to yield to traffic already in the roundabout and to follow the circular path. The SUV's abrupt maneuver could have caused a serious accident.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 2,
+    "total_score": 6
+}
+
+Sample 9:
+Ground Truth: At a double-lane roundabout, a silver sedan enters from the top of the frame and makes a direct left turn across the roundabout instead of circulating counterclockwise, forcing nearby vehicles to stop.
+Prediction: Yes, there is anomalous driving behavior in the video. A silver sedan enters the roundabout from the bottom left of the frame and proceeds to drive counter-clockwise around the roundabout. However, instead of exiting the roundabout at the appropriate exit, the sedan continues driving around the roundabout multiple times, seemingly without a clear purpose or direction. This behavior is unusual because drivers typically enter a roundabout and exit at the appropriate exit based on their intended direction of travel. The repeated circling without exiting suggests that the driver may be lost, confused, or intentionally circling for an unknown reason. This behavior could pose a hazard to other vehicles and pedestrians in the vicinity.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 10:
+Ground Truth: At a double-lane roundabout, a blue hatchback reaches the southeast entry, stops at the yield line, and waits while a fire truck enters from the left and traverses the circle ahead. After the truck clears, traffic resumes.
+Prediction: Yes, there is anomalous driving behavior in the video. A large semi-truck enters the roundabout from the bottom left, which is not a typical or safe maneuver for a roundabout. Roundabouts are designed for smaller vehicles to navigate in a circular pattern, and large trucks are generally discouraged from entering due to their size and the potential for difficulty in maneuvering safely. The truck appears to be cutting across the roundabout in a manner that could pose a hazard to other vehicles, including the red car and the blue pickup truck already in the roundabout. This behavior deviates from standard traffic rules and could lead to a collision or other dangerous situation.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 1
+}
+
+Sample 11:
+Ground Truth: At a snowy, double-lane roundabout at night, a light sedan approaches the top exit, briefly stops, then reverses a short distance from the exit back into the circulatory lanes, re-enters the roundabout.
+Prediction: Yes, there is anomalous driving behavior in the video. A vehicle is seen driving in the wrong direction on a snow-covered road, which is against standard traffic rules and poses a significant safety hazard. The vehicle appears to be moving against the flow of traffic, potentially endangering other road users. This behavior is unusual and potentially dangerous, especially in snowy conditions where visibility and traction are already compromised.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 5
+}
+
+Sample 12:
+Ground Truth: At a double-lane roundabout, a silver sedan starts from the middle of the frame inside the roundabout, circulates counterclockwise normally, then cuts across and exits via the entry lane at the exit on the right.
+Prediction: Yes, there is anomalous driving behavior in the video. A dark-colored SUV enters the roundabout from the left side and proceeds to drive through the roundabout in the wrong direction, going counterclockwise instead of the usual clockwise direction. This is against standard traffic rules for roundabouts and poses a significant safety hazard, as it could lead to collisions with vehicles that are following the correct direction. The SUV appears to be cutting across the roundabout, potentially ignoring or failing to yield to other vehicles already inside the roundabout. This behavior is clearly unsafe and violates typical traffic regulations.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 0,
+    "total_score": 2
+}
+
+Sample 13:
+Ground Truth: At a snowy double-lane roundabout, a black SUV approaches from the bottom-left entry, the SUV enters without yielding and crosses ahead of it. Other white sedan is forced to brake.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At approximately 0:03, a dark-colored SUV enters the roundabout from the bottom left of the frame. Instead of following the expected counterclockwise path around the roundabout, the SUV appears to be making a sharp, unexpected turn to the right, seemingly cutting across the roundabout’s central island. This maneuver is not typical for vehicles entering or exiting a roundabout and could pose a safety hazard. Additionally, the SUV’s trajectory appears to be conflicting with the flow of traffic already circulating in the roundabout, which is a potential violation of traffic rules.
+
+This behavior is anomalous because roundabouts are designed for vehicles to enter and exit in a counterclockwise direction, and drivers are expected to yield to traffic already in the roundabout. The SUV’s abrupt and potentially dangerous maneuver deviates from standard roundabout etiquette and could lead to a collision.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 3,
+    "reasoning_score": 2,
+    "total_score": 7
+}
+
+Sample 14:
+Ground Truth: At a double-lane urban roundabout at night, a white sedan approaches from the left entry, then makes a direct left U-turn and exit through the left exit of the roundabout.
+Prediction: No, there is no anomalous driving behavior in the video. The vehicles are moving in a normal and orderly manner through the roundabout, following traffic rules and signals. The red traffic light is visible, indicating that vehicles should stop before entering the intersection, and the cars are adhering to this rule. There are no signs of reckless driving, sudden stops, or any other unusual behavior. The scene appears to be a typical nighttime traffic scenario with no incidents or abnormalities.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 2
+}
+
+Sample 15:
+Ground Truth: At a single-lane urban roundabout, a white sedan approaches from the right, cuts across the painted channelization at the entry, and makes a quick U-turn, exiting back along the same approach while other vehicles circulate normally.
+Prediction: Yes, there is anomalous driving behavior in the video. A white pickup truck enters the roundabout from the bottom left and proceeds to make a U-turn within the roundabout, which is not a standard or permitted maneuver in most traffic regulations. Typically, vehicles should enter the roundabout and proceed counterclockwise, exiting at the appropriate exit. The truck’s U-turn disrupts the flow of traffic and poses a safety hazard, as it may collide with other vehicles or pedestrians. This behavior is considered dangerous and violates typical roundabout usage rules.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 2,
+    "reasoning_score": 2,
+    "total_score": 5
+}
+
+Sample 16:
+Ground Truth: At night at a double-lane roundabout, a silver car leaves the roundabout via the entry lane on the right side of the frame.
+Prediction: No, there is no anomalous driving behavior in the video. The traffic flows smoothly through the roundabout, with vehicles entering and exiting in an orderly manner. There are no signs of aggressive driving, sudden stops, or collisions. The red car on the right side of the frame appears to be following the proper path for exiting the roundabout, and the overall scene depicts normal nighttime traffic conditions.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 1
+}
+
+Sample 17:
+Ground Truth: At a double‑lane roundabout, a car at the top entry hesitates, then immediately make a U‑turn, bypassing the circulating lanes and heading back to the top exit.
+Prediction: Yes, there is anomalous driving behavior in the video. At approximately 0:03, a white sedan enters the roundabout from the right side and proceeds to make a U-turn within the roundabout, which is not a standard or permitted maneuver. This action disrupts the normal flow of traffic and poses a potential safety hazard to other vehicles in the roundabout. Normally, vehicles in a roundabout should enter and exit in a counterclockwise direction, following the flow of traffic without making abrupt or conflicting maneuvers like U-turns. The white sedan’s behavior deviates significantly from expected driving norms in this context.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 3,
+    "reasoning_score": 3,
+    "total_score": 7
+}
+
+Sample 18:
+Ground Truth: At a night-time double-lane roundabout, a dark sedan approaches from the lower-left, crosses the yield line without noticeable slowing, circles the central island at high speed, and exits to the upper-right.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At 0:06, a dark-colored sedan enters the roundabout from the bottom left and proceeds to drive through the roundabout in the wrong direction — counterclockwise — which is against standard traffic rules. Roundabouts are designed for clockwise circulation, and entering or driving counterclockwise can be dangerous and is typically illegal. The vehicle’s behavior deviates from expected norms, potentially creating a hazard for other drivers and pedestrians.
+
+Additionally, at 0:08, a red car enters the roundabout from the top right and appears to be driving at a high speed, possibly not yielding to the dark sedan already inside the roundabout. This could also be considered anomalous, as it may indicate reckless or inattentive driving.
+
+These behaviors suggest potential violations of traffic regulations and pose safety risks in the roundabout environment.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 5
+}
+
+Sample 19:
+Ground Truth: In a double-lane roundabout, a silver sedan starts from the middle of the frame, drives straight direct to the exit against traffic flow, and then exits correctly through the exit on the right. Other vehicles wait while it clears.
+Prediction: Yes, there is anomalous driving behavior in the video. A white car enters the roundabout from the right side and attempts to make a left turn into the roundabout, but instead of following the proper roundabout protocol, it veers sharply to the left and collides with a red car that is already in the roundabout. This collision is unexpected and dangerous, as it violates the typical flow of traffic in a roundabout, where vehicles should proceed in a counterclockwise direction and yield to traffic already in the roundabout. The white car’s sudden and aggressive maneuver leads to a direct impact with the red car, which is clearly not part of the expected driving behavior in this situation.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 1
+}
+
+Sample 20:
+Ground Truth: At a multi-lane urban roundabout, a fire truck approaches from the bottom-left. A red SUV on the right enters the roundabout first, then reverses slightly to give way to the approaching firetruck after noticing it. Other entries slow and stop at the yield lines. The fire truck proceeds while surrounding traffic remains halted.
+Prediction: Yes, there is anomalous driving behavior in the video. A red car is seen speeding through the roundabout, cutting across the intersection in a manner that appears reckless and unsafe. This behavior is unusual because roundabouts are designed to be navigated at slower speeds, with vehicles taking turns one at a time. The red car’s rapid movement and disregard for the flow of traffic pose a potential hazard to other drivers and pedestrians.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 4
+}
+
+Sample 21:
+Ground Truth: At a multi-lane urban roundabout at night, a black sedan approaches from the bottom-left, enters the roundabout, then drives over the central apron, cutting inside the circular lane, and exits to the upper-right.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At 0:03, a dark-colored sedan enters the roundabout from the bottom left, but instead of following the proper roundabout etiquette (yielding to traffic already in the circle and entering one lane at a time), it appears to attempt to cut across the roundabout from the entrance to the exit, possibly trying to take a shortcut or merge aggressively. This is dangerous and violates standard roundabout rules, which require drivers to go around the circle in a counterclockwise direction and yield to traffic already in the roundabout.
+
+Additionally, at 0:06, the sedan’s brake lights flash, suggesting it may have braked suddenly — possibly due to the unexpected or unsafe maneuver it was attempting. This abrupt braking could indicate a reaction to the dangerous situation created by its own anomalous behavior.
+
+Overall, the vehicle’s behavior is anomalous because it disregards roundabout safety rules and creates a potential hazard for other drivers.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 4,
+    "reasoning_score": 3,
+    "total_score": 9
+}
+
+Sample 22:
+Ground Truth: At a double-lane roundabout, an orange sedan from the left entry enters and then travels clockwise inside the roundabout, and stops inside the roundabout. Nearby vehicles brake/stop to avoid conflict.
+Prediction: Yes, there is anomalous driving behavior in the video. A large tanker truck with a red cab and white tank is attempting to make a turn into a roundabout. However, the truck is oversized and does not fit properly within the roundabout's designated turning path. As it attempts to turn, the truck’s rear end extends beyond the roundabout’s boundaries, causing it to partially block the flow of traffic. Additionally, the truck appears to be driving too slowly or hesitating, which disrupts the normal flow of traffic and creates a potential hazard for other vehicles. This behavior is unusual because large trucks are typically expected to navigate roundabouts with greater caution and often require dedicated lanes or larger turning radii. The truck’s maneuvering in this manner could be considered a traffic violation or at least a significant deviation from standard driving practices.
+Evaluation Results: {
+    "environment_score": 0,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 0
+}
+
+Sample 23:
+Ground Truth: At night in a double-lane roundabout, a dark sedan enters from the lower-left, immediately turns left to travel clockwise a short distance, then cuts out through the opposing entry lane, exit via the upper-left exit. A second dark sedan follows closely on the same path, tailgating as if racing.
+Prediction: Yes, there is anomalous driving behavior in the video. At 0:03, a red car enters the roundabout from the bottom left, but instead of following the expected circular path, it cuts across the roundabout and exits on the right side, which is not the standard or safe way to navigate a roundabout. This behavior is unusual and potentially dangerous as it disrupts the flow of traffic and may cause collisions.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 2,
+    "total_score": 6
+}
+
+Sample 24:
+Ground Truth: Rainy double-lane roundabout in an urban area. A gray sedan start from middle of the frame inside the roundabout, then exit the roundabout using the left entry lane.
+Prediction: Yes, there is anomalous driving behavior in the video. A white pickup truck enters the roundabout from the left, but instead of following the proper roundabout rules (yielding to traffic already in the roundabout and maintaining a smooth, circular path), it cuts across the roundabout in a manner that appears to be aggressive or unsafe. The truck seems to disregard the flow of traffic, potentially endangering other vehicles. This behavior is not typical for safe and lawful roundabout navigation.
+Evaluation Results: {
+    "environment_score": 0,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 0
+}
+
+Sample 25:
+Ground Truth: At a well-lit double-lane roundabout at night, a dark sedan approaches from the bottom-left, enters the roundabout via the exit lane, and proceeds clockwise against the intended flow and finally exiting via the left exit.
+Prediction: Yes, there is anomalous driving behavior in the video. A red car enters the roundabout from the left side, but instead of following the proper roundabout etiquette (yielding to traffic already in the roundabout and maintaining a smooth, circular path), it appears to cut across the roundabout in a manner that could be considered dangerous or illegal. The car does not seem to be following the flow of traffic and may be attempting to make a turn or exit that is not clearly marked or appropriate for its position. This behavior could pose a risk to other vehicles and pedestrians.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 5
+}
+
+Sample 26:
+Ground Truth: At an urban multi-lane roundabout, a red SUV approaches from the bottom-left, reaches the yield line, and enters the roundabout. A red compact already circulating approaches the entry. The SUV pulls in ahead of it, forcing the compact to slow while the SUV continues through.
+Prediction: Yes, there is anomalous driving behavior in the video. A red car enters the roundabout from the left and proceeds to drive through the center of the roundabout in a counter-clockwise direction, which is the correct direction of travel. However, instead of exiting the roundabout at the appropriate exit, the red car continues to drive around the roundabout multiple times, circling back to the same entry point. This behavior is anomalous because it is not typical for vehicles to circle around a roundabout multiple times without exiting. The car's repeated circling suggests either confusion, a failure to follow proper roundabout etiquette, or possibly a malfunctioning vehicle. This behavior could pose a hazard to other drivers and may lead to traffic congestion or accidents.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 27:
+Ground Truth: In a snowy double-lane roundabout, a dark sedan enters from the bottom, then drives inside the roundabout and exit the roundabout via a entry lane on the right.
+Prediction: Yes, there is anomalous driving behavior in the video. A black SUV enters the intersection from the bottom left, traveling against the flow of traffic. It proceeds to make a sharp right turn into the oncoming lane, which is against traffic rules and potentially dangerous. The SUV’s movement is erratic and appears to disregard the flow of traffic and traffic signals, indicating reckless or unlawful driving behavior.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 4
+}
+
+Sample 28:
+Ground Truth: At night at a double-lane roundabout, a silver minivan at bottom left drives towards the roundabout through the exit lane.
+Prediction: No, there is no anomalous driving behavior in the video. The traffic flows normally, with vehicles following the road markings and traffic signals appropriately. The cars are moving at a steady pace, and there are no signs of reckless or dangerous maneuvers. The scene appears to be a typical nighttime intersection with orderly traffic flow.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 1
+}
+
+Sample 29:
+Ground Truth: At a double-lane roundabout, a white pickup on the bottom-right drives on the pedestrian pavement and comes to a stop.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At approximately 0:03, a white truck enters the roundabout from the right side and begins to make a U-turn within the roundabout’s central island. This is highly unusual and dangerous, as roundabouts are designed for continuous, counterclockwise traffic flow, and vehicles are not meant to make U-turns or reverse direction inside the central island. The truck’s movement disrupts the normal flow of traffic and poses a significant safety hazard to other vehicles and pedestrians. This behavior is not typical and constitutes anomalous driving.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 30:
+Ground Truth: At a busy double-lane roundabout at dusk, a black sedan on the right of the frame inside roundabout, make a swerve around the SUV and exit via the top exit.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At approximately 0:03, a white SUV enters the roundabout from the bottom-left entrance, but instead of following the standard counterclockwise flow, it makes a sharp right turn directly into the central island of the roundabout. This is highly unusual and dangerous, as vehicles are expected to enter and exit the roundabout in a counterclockwise direction, staying within the designated lanes and avoiding the central island. The SUV’s maneuver appears to be an attempt to cut across the roundabout, possibly to make an illegal U-turn or to bypass traffic — a behavior that could lead to a collision with other vehicles.
+
+Additionally, at 0:04, a black sedan enters the roundabout from the bottom-right entrance and appears to be traveling in the wrong direction, possibly attempting to merge into traffic going the opposite way. This is also a violation of standard roundabout rules and poses a serious safety risk.
+
+These behaviors are not typical for roundabout traffic and represent clear anomalies that could result in accidents or traffic violations.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 31:
+Ground Truth: At a night urban roundabout, a black car approaches from the bottom-left, drives onto the brick-paved sidewalk/crosswalk island instead of the entry lane, pauses near the yield line, then turns right and enters the roundabout.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+The black car enters the roundabout from the bottom left, but instead of following the standard roundabout rules (driving counterclockwise and yielding to traffic already in the roundabout), it appears to attempt to cut across the roundabout or enter it from the wrong side, possibly attempting to make a turn or exit that is not appropriate for the flow of traffic. This behavior is dangerous and violates typical roundabout etiquette.
+
+Additionally, the car’s trajectory seems to be inconsistent with the expected path of a vehicle navigating a roundabout, suggesting possible confusion, recklessness, or an error in judgment by the driver.
+
+This behavior is anomalous because it disrupts the normal flow of traffic and poses a potential hazard to other vehicles and pedestrians in the vicinity.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 5
+}
+
+Sample 32:
+Ground Truth: At night on a snowy double-lane roundabout, two cars are stopped inside the roundabout on the left of the scene. Then one car stopped on the left yeild lane drives forward and partly parked on the sideways.
+Prediction: Yes, there is anomalous driving behavior in the video. A white car is seen driving in a circular motion around the roundabout, which is unusual as vehicles typically follow a single lane and exit the roundabout in a counterclockwise direction. The car appears to be circling multiple times, possibly indicating a driver who is confused, lost, or attempting to avoid traffic. This behavior is not typical and could be considered anomalous or potentially dangerous.
+Evaluation Results: {
+    "environment_score": 0,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 1,
+    "total_score": 1
+}
+
+Sample 33:
+Ground Truth: At a nighttime urban double-lane roundabout, a black SUV at the exit stops at the yield line on the bottom-left, then briefly reverses back to the roundabout while a second SUV waits behind, and stops again.
+Prediction: Yes, there is anomalous driving behavior in the video. The black car on the left side of the roundabout is not following the expected traffic flow. Instead of entering the roundabout and circulating in the correct direction, it appears to be attempting to cut across the intersection or make an illegal turn. This behavior is dangerous and violates standard traffic rules for roundabouts, which require vehicles to enter and exit in a counterclockwise direction while yielding to traffic already in the roundabout. The car’s abrupt maneuver could lead to a collision with other vehicles or pedestrians.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 5
+}
+
+Sample 34:
+Ground Truth: At a snowy, double-lane roundabout at night, a white sedan on the mid-left stops in the circulating lane beside an entry. It then reverses a short distance toward the yield line, approaching a waiting white SUV, and stops again.
+Prediction: Yes, there is anomalous driving behavior in the video. A white car is seen driving in a circular motion around a roundabout at night. The car appears to be moving in the wrong direction, going against the flow of traffic. This is dangerous and against traffic regulations, as vehicles should follow the designated direction of travel around a roundabout. The presence of snow and the nighttime setting further increase the risk of accidents due to reduced visibility and slippery road conditions.
+Evaluation Results: {
+  "environment_score": 1,
+  "grounding_score": 1,
+  "description_accuracy_score": 2,
+  "reasoning_score": 1,
+  "total_score": 5
+}
+
+Sample 35:
+Ground Truth: At a nighttime double-lane roundabout, a black SUV on the bottom left enters the roundabout via the outbound/exit lane and then proceeds normally.
+Prediction: Yes, there is anomalous driving behavior in the video. A car enters the roundabout from the left, but instead of following the standard counterclockwise flow, it makes a sharp right turn into the roundabout, cutting across the flow of traffic. This is not typical behavior for a roundabout, which is designed for vehicles to circulate counterclockwise. The car then proceeds to drive around the roundabout in the wrong direction, potentially creating a hazardous situation for other drivers. This behavior is dangerous and violates standard traffic rules for roundabouts.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 5
+}
+
+Sample 36:
+Ground Truth: Nighttime double-lane roundabout. An emergency vehicle with red flashing lights approaches on the top of the frame. A gray sedan at the near yield line and a black SUV inside the circle slow/stop. The emergency vehicle continues through and exits; traffic resumes.
+Prediction: Yes, there is anomalous driving behavior in the video. The car in the foreground is driving in the wrong direction around the roundabout. Instead of entering the roundabout from the correct lane and circulating counterclockwise, it is driving clockwise, which is against standard traffic rules and poses a significant safety hazard. This behavior could lead to a collision with other vehicles that are following the correct direction.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 2
+}
+
+Sample 37:
+Ground Truth: At a snowy double-lane roundabout at night, a car approaches from the top, then directly makes a U-turn across the roundabout entry instead of circulating counterclockwise, and exit via the top exit.
+Prediction: Yes, there is anomalous driving behavior in the video. A vehicle enters the roundabout from the right side and proceeds to drive in the wrong direction, going counterclockwise around the roundabout instead of the usual clockwise direction. This is against standard traffic rules and poses a significant safety hazard. The vehicle continues to drive counterclockwise, potentially causing confusion and danger to other drivers and pedestrians.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 38:
+Ground Truth: At a busy urban roundabout entrance at dusk, the lead dark sedan and a silver SUV at the bottom of the scene stop at the marked crosswalk. A pedestrian steps from the right curb, walks across in front of them, then reaches the left side. The waiting vehicles proceed afterward.
+Prediction: Yes, there is anomalous driving behavior in the video. A vehicle enters the roundabout from the wrong direction, going against the flow of traffic. This is dangerous and violates standard traffic rules, as vehicles should enter roundabouts from the right and yield to those already in the roundabout. The vehicle’s movement is clearly counter to the expected flow, posing a significant risk to other drivers and pedestrians.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 2
+}
+
+Sample 39:
+Ground Truth: At a double-lane roundabout, a black SUV approaches and enters in the mid-bottom of the frame in the mid of two lanes, then enter the roundabout the mid of frame.
+Prediction: Yes, there is anomalous driving behavior in the video. A black SUV enters the roundabout from the left side, but instead of following the proper roundabout protocol (entering the roundabout when it is safe and yielding to traffic already in the roundabout), it appears to be attempting to cut across the roundabout or possibly making an illegal U-turn within the roundabout. This behavior is dangerous and violates standard traffic rules for roundabouts, as it disrupts the flow of traffic and poses a risk to other vehicles and pedestrians. The SUV’s trajectory seems to be inconsistent with the expected circular path of the roundabout, indicating a potential hazard.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 40:
+Ground Truth: At a sunny double-lane roundabout, a white car at the bottom-right entry lane drives toward the roundabout with illegal lane change. Another gray car approach from the left side of the white car, they almost collide.
+Prediction: Yes, there is anomalous driving behavior in the video. A white SUV is seen making a sharp, unexpected turn into the roundabout from the wrong side of the road, cutting across the flow of traffic. This maneuver is dangerous and violates standard traffic rules, as vehicles are expected to enter roundabouts from the right lane and follow the circular path. The SUV’s abrupt turn disrupts the normal flow of traffic and poses a potential collision risk.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 4
+}
+
+Sample 41:
+Ground Truth: At a lit double‑lane roundabout, a white truck start from the top of frame inside the roundbaout circulates normally when cargo falls onto the roadway. Following vehicles brake hard and swerve within the roundabout to avoid the dropped load.
+Prediction: Yes, there is anomalous driving behavior in the video. At approximately 0:05, a white pickup truck enters the roundabout from the left lane and proceeds to drive straight through the center of the roundabout without yielding to traffic already circulating within it. This is contrary to standard roundabout rules, which require vehicles to yield to traffic already in the roundabout and to enter and exit in a counterclockwise direction. The truck’s behavior poses a potential hazard to other vehicles and violates the expected flow of traffic in the roundabout.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 4
+}
+
+Sample 42:
+Ground Truth: At a snowy double-lane roundabout, a silver sedan on the mid-bottom approaches the roundabout apporaches to the roundabout, after it enters the roundabout, the vehicle directly turns left(clockwise) and heads to the exit on the left.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+At 0:00, a dark-colored sedan is seen entering the roundabout from the bottom right. Instead of following the standard roundabout protocol—entering when there is a safe gap, yielding to traffic already in the roundabout, and exiting at the appropriate exit—it appears to be driving at a high speed and cutting across the roundabout in a way that suggests it is trying to “beat” or “rush” through the intersection. The car’s trajectory is not aligned with the expected circular path of the roundabout, and it seems to be attempting to exit the roundabout without fully completing the loop. This behavior is dangerous and violates standard traffic rules for roundabouts, which prioritize safety and orderly flow.
+
+Additionally, at 0:03, another vehicle (a white sedan) enters the roundabout from the bottom left, seemingly unaware of the dark sedan’s unusual path. The white sedan appears to be attempting to merge into the roundabout without fully yielding to the dark sedan, which is already in the roundabout. This further indicates a potential collision risk and improper merging behavior.
+
+In summary, the dark sedan’s attempt to cut across the roundabout and the white sedan’s failure to yield properly are both examples of anomalous driving behavior that could lead to accidents.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 2,
+    "reasoning_score": 1,
+    "total_score": 4
+}
+
+Sample 43:
+Ground Truth: In a snowy, double-lane roundabout at night, a silver sedan on the midle of the scence is inside the roundabout and facing the wrong way. It then drives clockwise and exits the roundabout via the entry lane on the left.
+Prediction: Yes, there is anomalous driving behavior in the video. A black car enters the roundabout from the bottom left and proceeds to drive in the wrong direction—counter-clockwise—instead of the correct clockwise direction. This is against standard traffic rules for roundabouts, which require vehicles to circulate clockwise to ensure safety and flow. The car’s movement is clearly abnormal and potentially hazardous.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 44:
+Ground Truth: At an urban roundabout approach, a silver sedan stops in the entry lane in the bottom of the scene in the mid of street and wait for a pedestrian to cross. After the pedestrian passes, the sedan continues.
+Prediction: Yes, there is anomalous driving behavior in the video. A red car is seen making an abrupt and unsafe maneuver by cutting across the roundabout, potentially endangering other vehicles and pedestrians. This behavior deviates from standard roundabout etiquette, which typically requires vehicles to follow a counterclockwise path and yield to traffic already in the roundabout. The red car’s sudden movement and disregard for the flow of traffic pose a significant safety risk.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 0,
+    "reasoning_score": 0,
+    "total_score": 1
+}
+
+Sample 45:
+Ground Truth: In a double-lane roundabout, a black car start from the top of the frame inside roundabout facing against the flow, then performs a tight U-turn within the roundabout, try to exit through the upper-right exit.
+Prediction: Yes, there is anomalous driving behavior in the video. A black car enters the roundabout from the right side and proceeds to drive counter-clockwise around the roundabout, which is the correct direction. However, after completing one full circle, the black car abruptly veers off to the left, cutting across the flow of traffic and exiting the roundabout in a manner that is not typical or safe. This behavior is anomalous because it disrupts the normal flow of traffic and could pose a hazard to other vehicles.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 46:
+Ground Truth: At a snowy double-lane roundabout at night, a white SUV stops in the exit lane near the yield sign on the mid-left. The driver departs and stands beside the SUV. A white sedan ahead and a dark car behind remain stopped.
+Prediction: Yes, there is anomalous driving behavior in the video.
+
+The white car is seen driving in a circular motion around the roundabout, which is unusual and potentially dangerous. Typically, vehicles should enter and exit roundabouts in a single direction, following the flow of traffic and yielding to vehicles already in the roundabout. The white car’s circular motion suggests it may be circling the roundabout multiple times, possibly due to confusion, lack of awareness, or an attempt to avoid another vehicle. This behavior could lead to a collision or cause traffic disruption.
+
+Additionally, the presence of snow and ice on the road surface indicates potentially hazardous driving conditions, which further increases the risk associated with this anomalous behavior. The car’s movement in such conditions may be more dangerous than normal, as it could lose traction or skid, especially if it is not driving at a safe speed.
+
+Overall, the white car’s circular motion around the roundabout is an anomalous and potentially hazardous driving behavior.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+Sample 47:
+Ground Truth: At night on a snowy double-lane roundabout, a car on the top circulates slightly fast in the roundabout, then approaches an exit, slow down on the left, instead of leaving, it decelerates and stop on the yeilding line of an exit on the left.
+Prediction: Yes, there is anomalous driving behavior in the video. A vehicle is seen driving in the wrong direction on the roundabout, which is against standard traffic rules. Roundabouts are designed for counterclockwise traffic flow, and entering or driving in the wrong direction can create a hazardous situation, potentially leading to collisions. The vehicle’s movement contradicts the expected flow of traffic and poses a risk to other drivers.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 1,
+    "reasoning_score": 0,
+    "total_score": 3
+}
+
+Sample 48:
+Ground Truth: At a double-lane urban roundabout, a white SUV on the bottom of the frame stops at the yield line, then briefly reverses with another car queued behind, it then enter the roundabout and leave the roudnabout via the top exit.
+Prediction: Yes, there is anomalous driving behavior in the video. At approximately 0:03, a white SUV enters the roundabout from the bottom left, but instead of following the expected counterclockwise path, it appears to cut across the roundabout, potentially colliding with or closely approaching another vehicle already in the roundabout. This behavior deviates from standard roundabout etiquette, which requires vehicles to yield to those already in the roundabout and to enter and exit in a counterclockwise direction. The SUV’s trajectory suggests it may be attempting to take a shortcut or is misjudging the traffic flow, which could lead to a dangerous situation.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 1,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 4
+}
+
+Sample 49:
+Ground Truth: In a double-lane roundabout, a white SUV starts from the bottom-right entry lane, it makes illegal lane change inside the roundabout and toward another white sedan drive normally, forcing a white sedan in the outer lane—also exiting—to brake; no contact occurs.
+Prediction: Yes, there is anomalous driving behavior in the video. At approximately 0:02, a white sedan enters the roundabout from the bottom-left side and appears to cut in front of a white van that is already in the roundabout. The sedan does not follow the proper roundabout etiquette, which typically requires vehicles to yield to those already in the roundabout. This abrupt and potentially dangerous maneuver could lead to a collision or traffic disruption. Additionally, the sedan’s path seems to be cutting across the flow of traffic rather than following the designated lane or trajectory for roundabout navigation.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 2,
+    "reasoning_score": 2,
+    "total_score": 5
+}
+
+Sample 50:
+Ground Truth: At a double-lane urban roundabout, a small dark car drive from the upper-right of the frame, drive clockwise inside the roundabout and then stops inside the roundabout in the top of the frame.
+Prediction: Yes, there is anomalous driving behavior in the video. A black car enters the roundabout from the bottom left, but instead of following the expected circular path, it abruptly veers to the right and exits the roundabout without completing a full circle. This behavior is unusual because vehicles typically enter a roundabout and follow the circular path to exit on the correct side. The abrupt turn suggests the driver may have been distracted, confused, or attempting to cut through the roundabout, which is not standard or safe driving practice.
+Evaluation Results: {
+    "environment_score": 1,
+    "grounding_score": 0,
+    "description_accuracy_score": 1,
+    "reasoning_score": 1,
+    "total_score": 3
+}
+
+
+========================================
+Summary for category: description
+========================================
+{
+    "environment_score_avg": 0.92,
+    "grounding_score_avg": 0.4,
+    "description_accuracy_score_avg": 1.32,
+    "reasoning_score_avg": 1.02,
+    "total_score_avg": 3.66
+}
