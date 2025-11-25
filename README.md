@@ -59,6 +59,7 @@ Available in Dense and MoE architectures that scale from edge to cloud, with Ins
 
 
 ## News
+* 2025.10.21: We have released the **Qwen3-VL-2B** ([Instruct](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct)/[Thinking](https://huggingface.co/Qwen/Qwen3-VL-2B-Thinking)) and **Qwen3-VL-32B** ([Instruct](https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct)/[Thinking](https://huggingface.co/Qwen/Qwen3-VL-32B-Thinking)). Enjoy it!
 * 2025.10.15: We have released the **Qwen3-VL-4B** ([Instruct](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct)/[Thinking](https://huggingface.co/Qwen/Qwen3-VL-4B-Thinking)) and **Qwen3-VL-8B** ([Instruct](https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct)/[Thinking](https://huggingface.co/Qwen/Qwen3-VL-8B-Thinking)). Enjoy it!
 * 2025.10.4: We have released the [Qwen3-VL-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct) and [Qwen3-VL-30B-A3B-Thinking](https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Thinking). We have also released the FP8 version of the Qwen3-VL models — available in our [HuggingFace collection](https://huggingface.co/collections/Qwen/qwen3-vl-68d2a7c1b8a8afce4ebd2dbe) and [ModelScope collection](https://modelscope.cn/collections/Qwen3-VL-5c7a94c8cb144b).
 * 2025.09.23: We have released the [Qwen3-VL-235B-A22B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct) and [Qwen3-VL-235B-A22B-Thinking](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking). For more details, please check our [blog](https://qwen.ai/blog?id=99f0335c4ad9ff6153e517418d48535ab6d8afef&from=research.latest-advancements-list)!
@@ -83,8 +84,8 @@ Available in Dense and MoE architectures that scale from edge to cloud, with Ins
 </div>
 
 <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-    <img src="https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg" width="30%" />
-    <img src="https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_thinking.jpg" width="24%" />
+    <img src="https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_2b_32b_vl_instruct.jpg" width="30%" />
+    <img src="https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_2b_32b_vl_thinking.jpg" width="24%" />
 </div>
 
 
@@ -127,10 +128,9 @@ We are preparing [cookbooks](https://github.com/QwenLM/Qwen3-VL/tree/main/cookbo
 
 Below, we provide simple examples to show how to use Qwen3-VL with 🤖 ModelScope and 🤗 Transformers.
 
-The code of Qwen3-VL has been in the latest Hugging face transformers and we advise you to build from source with command:
 ```
-pip install git+https://github.com/huggingface/transformers
-# pip install transformers==4.57.0 # currently, V4.57.0 is not released
+# The Qwen3-VL model requires transformers >= 4.57.0
+pip install "transformers>=4.57.0"
 ```
 
 ### 🤖 ModelScope
@@ -880,6 +880,7 @@ vllm serve Qwen/Qwen3-VL-235B-A22B-Instruct-FP8 \
   --mm-encoder-tp-mode data \
   --enable-expert-parallel \
   --async-scheduling \
+  --media-io-kwargs '{"video": {"num_frames": -1}}' \
   --host 0.0.0.0 \
   --port 22002
 ```
@@ -889,7 +890,7 @@ python -m sglang.launch_server \
    --model-path Qwen/Qwen3-VL-235B-A22B-Instruct \
    --host 0.0.0.0 \
    --port 22002 \
-   --tp 8
+   --tp 4
 ```
 * Image Request Example
 ```python
@@ -959,10 +960,18 @@ messages = [
 ]
 
 start = time.time()
+
+# When vLLM is launched with `--media-io-kwargs '{"video": {"num_frames": -1}}'`,
+# video frame sampling can be configured via `extra_body` (e.g., by setting `fps`).
+# This feature is currently supported only in vLLM.
+#
+# By default, `fps=2` and `do_sample_frames=True`.
+# With `do_sample_frames=True`, you can customize the `fps` value to set your desired video sampling rate.
 response = client.chat.completions.create(
     model="Qwen/Qwen3-VL-235B-A22B-Instruct-FP8",
     messages=messages,
-    max_tokens=2048
+    max_tokens=2048,
+    extra_body={"mm_processor_kwargs": {"fps": 2, "do_sample_frames": True}}
 )
 
 print(f"Response costs: {time.time() - start:.2f}s")
