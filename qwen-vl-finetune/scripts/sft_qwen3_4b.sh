@@ -8,13 +8,13 @@ NNODES=${WORLD_SIZE:-1}
 NPROC_PER_NODE=$(nvidia-smi --list-gpus | wc -l)  # Automatically detects available GPUs
 
 # DeepSpeed configuration
-deepspeed=./scripts/zero3_gpt.json
+deepspeed=./scripts/zero2.json
 
 # Model configuration
 llm=Qwen/Qwen3-VL-4B-Instruct  # Using HuggingFace model ID
 
 # Training hyperparameters
-lr=1e-5 # the suggested learning rate is from 1e-6 to 2e-7
+lr=5e-4 # the suggested learning rate is from 1e-6 to 2e-7
 batch_size=1
 grad_accum_steps=1
 
@@ -26,7 +26,7 @@ datasets="carmel_vad_cat"
 
 # Output configuration
 run_name="qwen3vl"
-output_dir=/output/sft_qwen3_4b_carmel_vad3
+output_dir=/output/sft_qwen3_4b_carmel_vad6
 
 # Training arguments
 args="
@@ -39,7 +39,7 @@ args="
     --tune_mm_llm True \
     --bf16 \
     --output_dir ${output_dir} \
-    --num_train_epochs 100 \
+    --num_train_epochs 200 \
     --per_device_train_batch_size ${batch_size} \
     --per_device_eval_batch_size $((batch_size*2)) \
     --gradient_accumulation_steps ${grad_accum_steps} \
@@ -58,13 +58,10 @@ args="
     --gradient_checkpointing True \
     --dataloader_num_workers 4 \
     --run_name ${run_name} \
-    --report_to wandb "
-
-# \
-#     --lora_enable True \
-#     --lora_r 128 \
-#     --lora_alpha 512 \
-#     --lora_dropout 0.05
+    --report_to wandb \
+    --lora_enable True \
+    --lora_r 64 \
+    --lora_alpha 128 "
 
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 

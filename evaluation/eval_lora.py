@@ -7,6 +7,9 @@ from peft import PeftModel
 import json
 from QA_pair_database import QA_database
 
+from peft import AutoPeftModelForCausalLM
+from transformers import AutoProcessor
+
 QAB = QA_database()
 
 def text_eval(references, predictions, output_path, category):
@@ -72,6 +75,7 @@ def eval_main(model, processor, data_path, evaluation_category, output_path):
                 break
             messages = []
             video_path = conversation['video']
+            sys_prompt = conversation['system_prompt']          # exactly as in training
             question = conversation['conversations'][0]['value'].split("\n")[-1]
             ref_ans = conversation['conversations'][1]['value']
             question_cat = QAB.question_type_query(question)
@@ -86,7 +90,7 @@ def eval_main(model, processor, data_path, evaluation_category, output_path):
                 messages.append(
                     {
                         "role": "system",
-                        "content": [{"type": "text", "text": QAB.four_cat_context()}],
+                        "content": [{"type": "text", "text": sys_prompt}],
                     })  
                 if ref_ans is None:
                     print(f"Warning: Unknown category '{ref_ans_bak}' in reference answer.")
@@ -139,9 +143,10 @@ def eval_main(model, processor, data_path, evaluation_category, output_path):
 if __name__ == "__main__":
     test_data_path = "/workspace/QWEN3-VL/datasets/CARMEL_VAD/carmel_vad_test_rewritten.json"
     training_data_path = "/workspace/QWEN3-VL/datasets/CARMEL_VAD/carmel_vad_cat_training_with_system_5cat.json"
-    mini_trainig_data_path = "/workspace/QWEN3-VL/datasets/CARMEL_VAD/carmel_vad_cat_training_with_system_5cat_mini.json"
+    mini_training_data_path = "/workspace/QWEN3-VL/datasets/CARMEL_VAD/carmel_vad_cat_training_with_system_5cat_mini.json"
     base_model_id = "Qwen/Qwen3-VL-4B-Instruct"
-    adapter_dir = "/output/sft_qwen3_4b_carmel_vad2"
+    adapter_dir = "/output/sft_qwen3_4b_carmel_vad6"
+
     parser = argparse.ArgumentParser(description="Evaluate Qwen3VL Model")
     parser.add_argument("--output-path","-o", type=Path, required=True, help="Path to save evaluation results")
     parser.add_argument("--evaluation-category","-e", type=str,
@@ -155,27 +160,38 @@ if __name__ == "__main__":
 
     model = Qwen3VLForConditionalGeneration.from_pretrained(
         base_model_id,
-        attn_implementation="flash_attention_2",
         torch_dtype=torch.bfloat16,
+        attn_implementation="flash_attention_2",
         device_map="auto",
     )
+    print("DEBUG: Base model loaded.")
 
     model = PeftModel.from_pretrained(
         model,
         adapter_dir,
     )
+    print("DEBUG: LoRA adapter loaded.")
 
-    model.eval()
+    # 3) VERY IMPORTANT: load processor from the *adapter dir*, not base
+    processor = AutoProcessor.from_pretrained(adapter_dir)
+        
 
     # model = Qwen3VLForConditionalGeneration.from_pretrained(
-    #     "Qwen/Qwen3-VL-4B-Instruct",
+    #     base_model_id,
     #     dtype=torch.bfloat16,
     #     attn_implementation="flash_attention_2",
     #     device_map="auto",
     # )
+    # print("DEBUG: Base model loaded.*******************************************")
 
-    # Load processor (handles images, videos, text prompts, etc.)
-    processor = AutoProcessor.from_pretrained("/output/sft_qwen3_4b_carmel_vad2")
-    # processor = AutoProcessor.from_pretrained("Qwen/Qwen3-VL-4B-Instruct")
+    # # Load LoRA adapter weights
+    # model = PeftModel.from_pretrained(
+    #     model,
+    #     adapter_dir,
+    # )
+    # print("DEBUG: LoRA adapter loaded.*******************************************")
 
-    eval_main(model=model, processor=processor, data_path=mini_trainig_data_path, evaluation_category=args.evaluation_category, output_path=args.output_path)
+    # # Load processor (handles images, videos, text prompts, etc.)
+    # processor = AutoProcessor.from_pretrained(base_model_id)
+
+    eval_main(model=model, processor=processor, data_path=mini_training_data_path, evaluation_category=args.evaluation_category, output_path=args.output_path)
